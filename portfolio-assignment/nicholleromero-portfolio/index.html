@@ -26,17 +26,32 @@
           </header>
         </article>
       </script>
+
+      <!-- NEW -->
+
+        <script id="project-template" type="text/x-handlebars-template">
+            <li>Word count: {{numWords}}</li>
+        </script>
+
+        <script id="interests-template" type="text/x-handlebars-template">
+            <header>
+              <h1>{{title}}</h1>
+                <p>{{desctiption}}</p>
+                    <div>
+                      <img src={{image}}>
+                    </div>
+              </header>
+          </script>
+
+
+      <!-- NEW END -->
+
+
   </head>
   <body>
 
 
-<!-- NEW -->
 
-    <script id="project-template" type="text/x-handlebars-template">
-          <li>Word count: {{numWords}}</li>
-        </script>
-
-<!-- NEW END -->
 
 
 <header class="site-header clearfix">
@@ -86,40 +101,14 @@
 
     <section id="projects" class="tab-content">
 
-
-
 <!-- NEW -->
       <ul class="project-stats">
       </ul>
 <!-- END NEW -->
 
-
-
     </section>
 
     <section id="passions" class="tab-content">
-    <h2>Culture</h2>
-      <p>Explored 35 countries in 6 continents.</p>
-      <ul class="passion">
-        <li><img src=Images/portfolio_culture.jpg></li>
-        <li><img src=Images/portfolio_culture3.jpg></li>
-        <li><img src=Images/portfolio_culture4.jpg></li>
-        <li><img src=Images/portfolio_culture6.jpg></li>
-        <li><img src=Images/portfolio_culture8.jpg></li>
-      </ul>
-    <h2>Sustainable Innovation</h2>
-      <p>Creating a better planet.</p>
-      <p>Practicing business sustainably.</p>
-      <ul class="passion">
-        <li><img src=Images/portfolio_sustainability.jpg></li>
-      </ul>
-    <h2>Education</h2>
-      <p>Spreading knowlege, globally.</p>
-      <ul class="passion">
-        <li><img src=Images/portfolio_education.jpg></li>
-        <li><img src=Images/portfolio_education3.jpg></li>
-      </ul>
-    <h2>Outdoors</h2>
     </section>
 
     <section id="contact" class="tab-content">
