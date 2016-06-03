@@ -14,22 +14,28 @@
 
 
     <script id="project-template" type="text/x-handlebars-template">
-      <article class="clearfix">
+      <article class="clearfix" data-title="{{name}}">
         <header>
           <h1>{{title}}</h1>
-            <div class="new">
-              <address id="name">
-                <a href="{{link}}">{{name}}</a>
-              </address>
-              <p id="desc">{{description}}</p>
+            <div class="byline">
+              <!-- <address id="name"> -->
+                <address><a href="{{link}}">{{name}}</a></address>
+                <div id="date">{{date}}</div>
+              <!-- </address> -->
             </div>
           </header>
+          <section class="project-body">{{{description}}}</section>
+          <a href="#" class="read-on">Read on &rarr;</a>
         </article>
       </script>
+    </head>
+
+
+
 
       <!-- NEW -->
 
-        <script id="project-template" type="text/x-handlebars-template">
+        <!-- <script id="project-template" type="text/x-handlebars-template">
             <li>Word count: {{numWords}}</li>
         </script>
 
@@ -42,12 +48,12 @@
                     </div>
               </header>
           </script>
-
+ -->
 
       <!-- NEW END -->
 
 
-  </head>
+
   <body>
 
 
@@ -63,7 +69,7 @@
             <li class="tab" data-content="home"><a href="#">Home</a></li>
             <li class="tab" data-content="about"><a href="#">About</a></li>
             <li class="tab" data-content="projects"><a href="#">Projects</a></li>
-            <li class="tab" data-content="passions"><a href="#">Passions &amp; Interests</a></li>
+            <li class="tab" data-content="skills"><a href="#">Skills</a></li>
             <li class="tab" data-content="contact"><a href="#">Contact</a></li>
           </ul>
         <!-- </div> -->
@@ -90,28 +96,58 @@
     </section>
 
     <section id="about" class="tab-content">
-      <h1>
-        <div><img src=Images/Nicholle_Pic.jpg></div>
-      </h1>
-      <ul class="icons">
-        <li><a href="https://www.linkedin.com/in/nicholle-romero-mba-24355751"><img src=Images/LinkedIn_Icon.png></a></li>
-        <li><a href="https://github.com/nicholleromero"><img src=Images/GitHub_Icon.png></a></li>
-      </ul>
+      <h2>Nicholle M. Romero</h2>
+        <div id="nicPic"><img src=Images/Nicholle_Pic.jpg></div>
+        <div id="aboutPara">
+          <p>Fueled by passion, drive, and ambition to create innovative work in the tech industry.</p>
+          <p>I received an undergraduate degree in Finance with minors in Mathematics and Physics from
+          the University of Denver. As a student in the honors college, I wrote my thesis on an analysis
+          of the public sector and private sector's role in eradicating global poverty. After completing
+          my undergraduate degree, I immediately traveled the world on my own, following up on my thesis topic,
+          volunteering and working to solve global poverty. I enrolled in graduate school the following year and received
+          my International MBA from the University of Denver in 2015. I continued my pursuit of international
+          sustainable development throughout this program while completing several consulting projects including
+          work for <a href="https://www.db.com/cr/en/responsible-business/financing-social-change.htm">Deutsche Bank's
+          Impact Investment Fund</a> and <a href="http://www.nokero.com/">Nokero</a>. These projects involved on-site research in South America
+          and Africa.</p>
+          <p>Since finishing my graduate degree, I have worked as an Investment Analyst for <a href="https://www.rvkinc.com/">RVK, Inc.</a>,
+          developing my analytical and quantitative skills.</p>
+        </div>
     </section>
 
     <section id="projects" class="tab-content">
-
+      <h2>My Work</h2>
+      <div>
+        <ul id="filters">
+          <li>
+            <select id="title-filter">
+              <option value="">-- Filter by Project Title --</option>
+            </select>
+          </li>
+        </ul>
+      </div>
+      <iframe
+        width="750"
+        height="350"
+        src="http://pdx-neighbors.github.io/pdx-neighbors/">
+      </iframe>
 <!-- NEW -->
       <ul class="project-stats">
       </ul>
 <!-- END NEW -->
-
     </section>
 
-    <section id="passions" class="tab-content">
+    <section id="skills" class="tab-content">
+      <h2>My Skills</h2>
     </section>
 
     <section id="contact" class="tab-content">
+      <h2>Let's Connect!</h2>
+      <p>Please reach out to me with any inquiries or comments via <a href="mailto:nicholleromero@gmail.com">email</a>.</p>
+      <ul class="icons">
+        <li><a href="https://www.linkedin.com/in/nicholle-romero-mba-24355751"><img src=Images/LinkedIn_Icon.png></a></li>
+        <li><a href="https://github.com/nicholleromero"><img src=Images/GitHub_Icon.png></a></li>
+      </ul>
     </section>
 
   </main>
@@ -124,7 +160,9 @@
     <script src="projectView.js"></script>
     <script src="video.js"></script>
     <script>
-      Project.fetchAll();
+      Project.fetchAll(function() {
+        projectView.init();
+      });
     </script>
   </body>
 </html>

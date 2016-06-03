@@ -43,6 +43,11 @@ position: relative;
 
 }
 
-.passion {
-  width: 200px!important;
+#nicPic {
+  float: left;
+  margin: 0px 15px 15px 0px;
+}
+
+#aboutPara {
+  margin: 0px 15px 15px 0px;
 }
