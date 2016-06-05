@@ -2,7 +2,7 @@
 
 function Project (comps) {
   this.name = comps.name;
-  this.url = comps.url;
+  this.projectUrl = comps.projectUrl;
   this.description = comps.description;
   this.date = comps.date;
 };
@@ -11,6 +11,7 @@ Project.all = [];
 
 Project.prototype.toHtml = function() {
   var template = $('#project-template').html();
+console.log("this woks", this)
   var compiledTemplate = Handlebars.compile(template);
   return compiledTemplate(this);
 };
