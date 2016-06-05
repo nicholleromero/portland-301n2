@@ -10,19 +10,15 @@ function Project (comps) {
 Project.all = [];
 
 Project.prototype.toHtml = function() {
-  // var template = Handlebars.compile($('#project-template').text());
-  //
   var template = $('#project-template').html();
   var compiledTemplate = Handlebars.compile(template);
   return compiledTemplate(this);
 };
 
 Project.loadAll = function(projectData){
-
-Project.all = projectData.map(function(p){   //new
-  return new Project(p);   //new
+Project.all = projectData.map(function(p){
+  return new Project(p);
 });
-    //
     // projectData.forEach(function(p) {  //new
     // Project.all.push(new Project(p));  //new
 };
@@ -40,7 +36,6 @@ Project.fetchAll = function(callback) {
   });
 }
 
-
 Project.getData = function(){
   return $.ajax({
     method: "GET",
@@ -55,7 +50,6 @@ Project.getData = function(){
 }
 
 // -------NEW
-
 // Project.numWordsAll = function() {
 //   return Project.all.map(function(project){
 //       numWords :
@@ -68,16 +62,11 @@ Project.getData = function(){
 //     })
 // };
 //
-
 // ---------END NEW
-
 
 window.Project = Project;
 
 })(window);
-
-
-
 
 
 

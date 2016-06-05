@@ -2,14 +2,9 @@
 
 var projectView = {};
 
-//6-2 work
 projectView.populateFilters = function() {
-
-  $('.article').each(function() {
-
+  $('project').each(function() {
     if (!$(this).hasClass('template')) {
-
-      console.log("no class template");
       var val = $(this).find('address a').text();
       var optionTag = '<option value="' + val + '">' + val + '</option>';
       $('#title-filter').append(optionTag);
@@ -20,18 +15,14 @@ projectView.populateFilters = function() {
 projectView.handleProjectFilter = function() {
   $('#title-filter').on('change', function() {
     if ($(this).val()) {
-      $('article').hide();
-      $('article[data-title= "' + $(this).val() + '"]').fadeIn();
+      $('project').hide();
+      $('project[data-title= "' + $(this).val() + '"]').fadeIn(); //
     } else {
-      $('article').fadeIn();
-      $('article.template').hide();
+      $('project').fadeIn();
+      $('project.template').hide();
     }
   });
 };
-
-//end 6-2
-
-
 
 projectView.handleNav = function() {
   $('.navigation li.tab').on('click', function() {
@@ -44,7 +35,6 @@ projectView.handleNav = function() {
 };
 
 projectView.setTeasers = function() {
-//  $('.project-body *:nth-of-type(n+2)').hide();
 //  debugger
   $('.project-body').hide();
   $('#projects').on('click', 'a.read-on', function(e) {
@@ -54,10 +44,24 @@ projectView.setTeasers = function() {
   });
 };
 
+//
+// Image1 = new Image(600,400)
+// Image1.src = "images/Nicholle_Pic.jpg"
+// Image2 = new Image(600,400)
+// Image2.src = "images/nicholle-portfolio.jpg"
+//
+//
+//
+// $('#nicPic').mouseover( function(){
+// 		$('#niPic').attr('src', Image2.src);
+// });
+//
+// $('#nicPic').mouseleave( function(){
+// 		$('#nicPic').attr('src', Image1.src);
+// });
 
 
 //$(document).ready(function(){
-
 projectView.init = function() {
   projectView.populateFilters();
   projectView.handleProjectFilter();
@@ -67,7 +71,6 @@ projectView.init = function() {
 //});
 
 
-
 //-----NEW
 //
 // Project.numWordsAll().forEach(function(stat){
@@ -75,7 +78,6 @@ projectView.init = function() {
 // })
 
 //----END NEW
-
 
 
 module.projectView = projectView;
